@@ -1,0 +1,35 @@
+/* image to never exceed width of container */
+img {
+  width: 100%;
+}
+
+body {
+  line-height: 1.5;
+  font-size: 100%;
+  color: blue;
+}
+
+/* Text styles */
+p {
+  font-size: 1em;
+}
+
+address {
+  display: inline-block;
+}
+
+article {
+  border-bottom: 2px solid black;
+  margin: 0 2.5%;
+}
+
+
+/* Link styles */
+a, a:link, a:active {
+  text-decoration: none;
+  color: #777;
+}
+
+a:hover, a:focus {
+  color: red;
+}
