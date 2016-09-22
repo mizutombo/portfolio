@@ -21,26 +21,77 @@
       <div class='icon-menu'></div>
       <ul>
         <li class="tab" data-content="articles"><a href="#" class="icon-home"> Home</a></li>
-        <li class="tab" data-content="articles"><a href="#" class="icon-power"> About</a></li>
+        <li class="tab" data-content="about"><a href="#" class="icon-power"> About</a></li>
         <li><a href="https://www.linkedin.com/in/tshultz" target="_blank" class="icon-link"> LinkedIn</a></li>
         <li><a href="https://github.com/mizutombo/portland-301d6/tree/master/class-01-responsive-mobile-first/portfolio-assignment" target="_blank" class="icon-github"> GitHub</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <section id='articles'>
-      <article class='template' data-category='cat'>
+    <section id="articles" class="tab-content">
+      <div>
+        <ul id="filters">
+          <li>
+            <select id="developer-filter">
+              <option value="">---Filter by Developer</option>
+            </select>
+          </li>
+          <li>
+            <select id="category-filter">
+              <option value="">---Filter by Category</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+      <article class='template' data-category='placeholder-category'>
         <header>
           <h1>Dragonfly Projects</h1>
-          <div class='byline'>
+          <div class='byline' data-category='placeholder-category'>
             By <address><a href="">Developer Name</a></address>
             published <time pubdate datetime="2000-01-01">Publish Time</time>
           </div>
         </header>
         <section class='article-body'></section>
+        <a href='#' class='read-on'>Read on &rarr;</a>
+      </article>
+    </section>
+    <section id='about' class='tab-content'>
+      <header>
+        Welcome to the Dragonfly Blog
+      </header>
+      <section>
+        <h1>Snapshot of some of my professional interests:</h1>
+        <ul>
+          <li>Coding &amp; software development</li>
+          <li>Quality assurance</li>
+          <li>Global business</li>
+          <li>Continual learning</li>
+          <li>Sharing knowledge</li>
+        </ul>
+        <h1>Snapshot of some of my career experiences:
+        <ul>
+          <li>Working within large multi-national corporations</li>
+            <ul>
+              <li>Tektronix, Xerox, Intel</li>
+            </ul>
+          <li>International business experience</li>
+            <ul>
+              <li>China, Hong Kong, Taiwan, Japan, South Korea, Thailand</li>
+            </ul>
+          <li>Program management experience</li>
+            <ul>
+              <li>New product development</li>
+              <li>Sustaining business support</li>
+              <li>Supplier quality engineering</li>
+              <li>Procurement &amp; vendor / customer management</li>
+            </ul>
+        </ul>
+      </section>
+    </section>
   </main>
     <script src="scripts/jquery-3.1.0.js" type="text/javascript"></script>
     <script src="scripts/blogProjects.js" type="text/javascript"></script>
     <script src="scripts/projects.js" type="text/javascript"></script>
+    <script src="scripts/projectsView.js" type="text/javascript"></script>
 </body>
 </html>
