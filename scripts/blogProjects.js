@@ -1,4 +1,4 @@
-var ourLocalData = [
+var myLocalData = [
   {
     title:       'Portfolio',
     category:    'Code 301 personal project',
