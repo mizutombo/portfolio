@@ -34,4 +34,6 @@ myLocalData.forEach(function(ele) {
 
 projects.forEach(function(a) {
   $('#project').append(a.toHtml());
+  $('#developer-filter').append('<option value ="' + a.developer + '">' + a.developer + '</option>');
+  $('#category-filter').append('<option value ="' + a.category + '">' + a.category + '</option>');
 });

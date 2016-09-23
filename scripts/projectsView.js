@@ -20,16 +20,16 @@ projectView.populateFilters = function() {
 projectView.handleDeveloperFilter = function() {
   $('#developer-filter').on('change', function() {
     if ($(this).val()) {
-      $('project').hide();
+      $('#project').hide();
       var $same = $(this).val();
-      $('project').each(function() {
+      $('#project').each(function() {
         if ($same === $(this).find('address a').text()) {
           $(this).fadeIn();
         }
       });
 
     } else {
-      $('project').not('.template').show();
+      $('#project').not('.template').show();
     }
     $('#category-filter').val('');
   });
@@ -38,15 +38,15 @@ projectView.handleDeveloperFilter = function() {
 projectView.handleCategoryFilter = function() {
   $('#category-filter').on('change', function() {
     if ($(this).val()) {
-      $('project').hide();
+      $('#project').hide();
       var $same = $(this).val();
-      $('project').each(function() {
+      $('#project').each(function() {
         if ($same === $(this).attr('data-category')) {
           $(this).fadeIn();
         }
       });
     } else {
-      $('project').not('.template').show();
+      $('#project').not('.template').show();
     }
     $('#developer-filter').val('');
   });
