@@ -10,7 +10,17 @@ function Project (opts) {
 };
 
 Project.prototype.toHtml = function() {
-  var $newProject = $('#project.template').clone();
+
+  /*Project.prototype.toHtml = function() {*/
+   var source = $('#article-template').html();
+   var template = Handlebars.compile(source);
+   var html = template(this);
+
+   return html;
+  };
+
+
+  /*var $newProject = $('#project.template').clone();
   $newProject.attr('data-category', this.category);
   $newProject.find('a').text(this.developer);
   $newProject.find('a').attr('href', this.developerUrl);
@@ -19,10 +29,10 @@ Project.prototype.toHtml = function() {
   $newProject.find('time[pubdate]').attr('title', this.publishedOn);
   $newProject.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
 
-  $newProject.removeAttr('class');
+  $newProject.removeAttr('class');*/
 
-  return $newProject;
-};
+  //return $newProject;//
+//};//
 
 myLocalData.sort(function(curElem, nextElem) {
   return (new Date(nextElem.publishedOn)) - (new Date(curElem.publishedOn));

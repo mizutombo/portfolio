@@ -60,7 +60,7 @@ projectView.handleMainNav = function () {
     $('#' + $selectedItem).fadeIn();
   });
 
-  $('.main-nav .tab:first').click();
+  $('.main-nav .tab:first').click(); //calls jQuery event
 };
 
 projectView.setTeasers = function() {
