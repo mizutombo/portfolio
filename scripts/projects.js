@@ -1,6 +1,6 @@
-var articles = [];
+var projects = [];
 
-function Article (opts) {
+function Project (opts) {
   this.title = opts.title;
   this.category = opts.category;
   this.developer = opts.developer;
@@ -9,29 +9,40 @@ function Article (opts) {
   this.body = opts.body;
 };
 
-Article.prototype.toHtml = function() {
-  var $newArticle = $('article.template').clone();
-  $newArticle.attr('data-category', this.category);
-  $newArticle.find('a').text(this.developer);
-  $newArticle.find('a').attr('href', this.developerUrl);
-  $newArticle.find('h1').text(this.title);
-  $newArticle.find('div.byLine').after(this.body);
-  $newArticle.find('time[pubdate]').attr('title', this.publishedOn);
-  $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
+//Project.prototype.toHtml = function() {
+/* incorporate handlebars.js into code
+  var source = $('#article-template').html();
+  var template = Handlebars.compile(source);
+  var html = template(this);
 
-  $newArticle.removeAttr('class');
+  return html;
+}; */
 
-  return $newArticle;
+Project.prototype.toHtml = function() {
+var $newProject = $('article.template').clone();
+$newProject.removeAttr('class');
+
+$newProject.attr('data-category', this.category);
+$newProject.find('a:first').text(this.developer);
+$newProject.find('a').attr('href', this.developerUrl);
+$newProject.find('h2').text(this.title); // return project title into <h2></h2> spot
+$newProject.find('h3').text(this.category); // return project category into <h3></h3> spot
+$newProject.find('time[pubdate]').attr('title', this.publishedOn);
+$newProject.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
+$newProject.find('h3.project-body').html(this.body); // return project description html into <h4></h4> spot
+
+return $newProject;
 };
 
-ourLocalData.sort(function(curElem, nextElem) {
-  return (new Date(nextElem.publishedOn)) - (new Date(curElem.publishedOn));
+myLocalData.sort(function(currentElement, nextElement) {
+  return (new Date(nextElement.publishedOn)) - (new Date(currentElement.publishedOn));
 });
 
-ourLocalData.forEach(function(ele) {
-  articles.push(new Article(ele));
+myLocalData.forEach(function(element) {
+  projects.push(new Project(element));
 });
 
-articles.forEach(function(a) {
-  $('#articles').append(a.toHtml());
+projects.forEach(function(project) {
+  $('#project').append(project.toHtml());
+  //populate contents of projects via append onto section with id='project'
 });

@@ -1,109 +1,80 @@
-// Configure a view object, to hold all our functions for dynamic updates and article-related event handlers.
-var articleView = {};
+var projectView = {};
 
-articleView.populateFilters = function() {
-  $('article').not('.template').each(function() {
-    var developerName, category, optionTag;
-    developerName = $(this).find('address a').text();
-    optionTag = '<option value="' + developerName + '">' + developerName + '</option>';
-    $('#developer-filter').append(optionTag);
+projectView.populateFilters = function() {
+  $('article').not('.template').each(function() { // "not('.template')" enables new projects to be added into 'article', together with associated population of pull-down selector names for new Developer and new Project Category
+    var developer;
+    var category;
+    var optionTag;
 
-    category = $(this).attr('data-category');
-    optionTag = '<option value="' + category + '">' + category + '</option>';
-    if ($('#category-filter option[value="' + category + '"]').length === 0) {
-      $('#category-filter').append(optionTag);
+    developer = $(this).find('address a').text(); // retrieves text
+    optionTag = '<option value = "' + developer + '">' + developer + '</option>';
+    if ($('#developer-filter option[value = "' + developer + '"]').length === 0) {
+      $('#developer-filter').append(optionTag); // populates Developer name for pull-down selector and appends via option tag, without duplicating Developer name in selector
+    }
+    category = $(this).attr('data-category'); // retrieves attribute and value
+    optionTag = '<option value = "' + category + '">' + category + '</option>';
+    if ($('#category-filter option[value = "' + category + '"]').length === 0) {
+      $('#category-filter').append(optionTag); // populates Project Category name for pull-down selector and appends via option tag, without duplicating Project Category name in selector
     }
   });
 };
 
-articleView.handleDeveloperFilter = function() {
+projectView.handleDeveloperFilter = function() {
   $('#developer-filter').on('change', function() {
     if ($(this).val()) {
-      /* TODO: If the select box changes to an option that has a value,
-      we should:
-      1. Hide all the articles,
-      2. Fade in only the articles that match based on the author
-        that was selected. Use an "attribute selector" to find
-        those articles that match the value, and fade them in
-        for the reader. */
-      $('article').hide();
+      $('article').hide(); // upon filter item change-click, hide all projects in 'article'
       var $same = $(this).val();
       $('article').each(function() {
-        if ($same === $(this).find('address a').text()) {
-          $(this).fadeIn();
+        if ($same === $(this).find('address a').text()) { // retrieves text
+          $(this).fadeIn(); // fade into 'article' view the click-selected item
         }
       });
-
     } else {
-      /* TODO: Otherwise, we should:
-      1. Show all the articles.
-      2. Except the one article we are using as a template. */
-      $('article').not('.template').show();
-
+      $('article').not('.template').show(); // if no filter item is selected, show all projects
     }
     $('#category-filter').val('');
   });
 };
 
-articleView.handleCategoryFilter = function() {
-  /* TODO: Just like we do for #author-filter above, we should also handle
-  change events on the #category-filter element. Be sure to reset the
-  #author-filter while you're at it! */
-  $('#category-filter').on('change', function(){
-    if ($(this).val()){
-      $('article').hide();
+projectView.handleCategoryFilter = function() {
+  $('#category-filter').on('change', function() {
+    if ($(this).val()) {
+      $('article').hide(); // upon filter item change-click, hide all projects in 'article'
       var $same = $(this).val();
       $('article').each(function() {
-        if ($same === $(this).attr('data-category')) {
-          $(this).fadeIn();
+        if ($same === $(this).attr('data-category')) { // retrieves attribute and value
+          $(this).fadeIn(); // fade into 'article' view the click-selected item
         }
       });
     } else {
-      $('article').not('.template').show();
+      $('article').not('.template').show(); // if no filter item is selected, show all projects
     }
     $('#developer-filter').val('');
   });
 };
 
-articleView.handleMainNav = function () {
-  /* TODO: Complete the delegated event handler below to help
-  power the tabs feature.
-  Clicking any .tab element should:
-  1. Hide all the .tab-content sections.
-  2. Fade in the single .tab-content section that is associated withthe clicked
-  .tab element's data-content attribute. */
-
+projectView.handleMainNav = function () {
   $('.main-nav').on('click', '.tab', function(event) {
     event.preventDefault();
-    $('.tab-content').hide();
+    $('.tab-content').hide(); // upon click of any navigation link, hide all '.tab-content' items ... i.e. hide all projects and contents of "About" page
     var $selectedItem = $(this).data('content');
-    $('#' + $selectedItem).fadeIn();
+    $('#' + $selectedItem).fadeIn(); // fade in page linked to click-selected navigation link
   });
-
-  $('.main-nav .tab:first').click();
+  $('.main-nav .tab:first').click(); //calls jQuery event on navigation
 };
 
-articleView.setTeasers = function() {
-  /* Hide any elements after the first 2 (<p> Tags in case)
-  in any article body: */
-  $('.article-body *:nth-of-type(n+2)').hide();
+projectView.setTeasers = function() {
 
-  /* TODO: Add a delegated event handler to reveal the remaining
-  paragraph.  When a .read-on link is clicked, we can:
-  1. Prevent the default action of a link.
-  2. Reveal everything in that particular article now.
-  3. Hide that read-on link! */
-  // STRETCH GOAL!:  change the 'Read On' link to display 'Show Less'
+  $('.project-body *:nth-of-type(n+2)').hide();
 
   $('.read-on').on('click', function(event) {
     event.preventDefault();
-    $(this).parent().find('.article-body *:nth-of-type(n+2)').fadeIn();
+    $(this).parent().find('.project-body *:nth-of-type(n+2)').fadeIn();
   });
 };
 
-// TODO: Invoke all of the above functions (I mean, methods!):
-articleView.populateFilters();
-articleView.handleDeveloperFilter();
-articleView.handleCategoryFilter();
-articleView.handleMainNav();
-articleView.setTeasers();
+projectView.populateFilters();
+projectView.handleDeveloperFilter();
+projectView.handleCategoryFilter();
+projectView.handleMainNav();
+projectView.setTeasers();
