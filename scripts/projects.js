@@ -9,16 +9,16 @@ function Project (opts) {
   this.body = opts.body;
 };
 
-//Project.prototype.toHtml = function() {
-/* incorporate handlebars.js into code
-  var source = $('#article-template').html();
+// Incorporate handlebars.js into code
+Project.prototype.toHtml = function() {
+  var source = $('#project-template').html();
   var template = Handlebars.compile(source);
   var html = template(this);
 
   return html;
-}; */
+};
 
-Project.prototype.toHtml = function() {
+/*Project.prototype.toHtml = function() {
 var $newProject = $('article.template').clone();
 $newProject.removeAttr('class');
 
@@ -32,7 +32,7 @@ $newProject.find('time').html('about ' + parseInt((new Date() - new Date(this.pu
 $newProject.find('h3.project-body').html(this.body); // return project description html into <h4></h4> spot
 
 return $newProject;
-};
+};*/
 
 myLocalData.sort(function(currentElement, nextElement) {
   return (new Date(nextElement.publishedOn)) - (new Date(currentElement.publishedOn));
