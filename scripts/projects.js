@@ -29,8 +29,7 @@ $newProject.find('h2').text(this.title); // return project title into <h2></h2> 
 $newProject.find('h3').text(this.category); // return project category into <h3></h3> spot
 $newProject.find('time[pubdate]').attr('title', this.publishedOn);
 $newProject.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
-$newProject.find('h3.project-body').html(this.body);
-//$newProject.find('h3.project-body').after(this.body); // return project description into <h4></h4> spot
+$newProject.find('h3.project-body').html(this.body); // return project description html into <h4></h4> spot
 
 return $newProject;
 };
