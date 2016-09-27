@@ -1,17 +1,18 @@
 var projectView = {};
 
 projectView.populateFilters = function() {
-  $('article').not('.template').each(function() { // "not('.template')" enables new projects to be added into 'article', together with associated population of pull-down selector names for new Developer and new Project Category
+  $('article').each(function() { // "not('.template')" enables new projects to be added into 'article', together with associated population of pull-down selector names for new Developer and new Project Category
     var developer;
     var category;
     var optionTag;
 
-    developer = $(this).find('address a').text(); // retrieves text
+    developer = $(this).find('div').attr('data-author'); // retrieves text
+    console.log(developer);
     optionTag = '<option value = "' + developer + '">' + developer + '</option>';
     if ($('#developer-filter option[value = "' + developer + '"]').length === 0) {
       $('#developer-filter').append(optionTag); // populates Developer name for pull-down selector and appends via option tag, without duplicating Developer name in selector
     }
-    category = $(this).attr('data-category'); // retrieves attribute and value
+    category = $(this).find('div').attr('data-category'); // retrieves attribute and value
     optionTag = '<option value = "' + category + '">' + category + '</option>';
     if ($('#category-filter option[value = "' + category + '"]').length === 0) {
       $('#category-filter').append(optionTag); // populates Project Category name for pull-down selector and appends via option tag, without duplicating Project Category name in selector
@@ -25,12 +26,12 @@ projectView.handleDeveloperFilter = function() {
       $('article').hide(); // upon filter item change-click, hide all projects in 'article'
       var $same = $(this).val();
       $('article').each(function() {
-        if ($same === $(this).find('address a').text()) { // retrieves text
+        if ($same === $(this).find('div').attr('data-author')) { // retrieves text
           $(this).fadeIn(); // fade into 'article' view the click-selected item
         }
       });
     } else {
-      $('article').not('.template').show(); // if no filter item is selected, show all projects
+      $('article').show(); // if no filter item is selected, show all projects
     }
     $('#category-filter').val('');
   });
@@ -42,12 +43,12 @@ projectView.handleCategoryFilter = function() {
       $('article').hide(); // upon filter item change-click, hide all projects in 'article'
       var $same = $(this).val();
       $('article').each(function() {
-        if ($same === $(this).attr('data-category')) { // retrieves attribute and value
+        if ($same === $(this).find('div').attr('data-category')) { // retrieves attribute and value
           $(this).fadeIn(); // fade into 'article' view the click-selected item
         }
       });
     } else {
-      $('article').not('.template').show(); // if no filter item is selected, show all projects
+      $('article').show(); // if no filter item is selected, show all projects
     }
     $('#developer-filter').val('');
   });
