@@ -1,7 +1,7 @@
 var projectView = {};
 
 projectView.populateFilters = function() {
-  $('article').each(function() { // "not('.template')" enables new projects to be added into 'article', together with associated population of pull-down selector names for new Developer and new Project Category
+  $('article').each(function() {
     var developer;
     var category;
     var optionTag;
