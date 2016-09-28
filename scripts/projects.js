@@ -9,15 +9,6 @@ function Project (opts) {
   this.body = opts.body;
 };
 
-//Project.prototype.toHtml = function() {
-/* incorporate handlebars.js into code
-  var source = $('#article-template').html();
-  var template = Handlebars.compile(source);
-  var html = template(this);
-
-  return html;
-}; */
-
 Project.prototype.toHtml = function() {
 var $newProject = $('article.template').clone();
 $newProject.removeAttr('class');

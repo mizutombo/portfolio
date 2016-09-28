@@ -19,6 +19,8 @@ projectView.populateFilters = function() {
   });
 };
 
+$('article.template').hide(); // hide project list format template
+
 projectView.handleDeveloperFilter = function() {
   $('#developer-filter').on('change', function() {
     if ($(this).val()) {

@@ -40,10 +40,6 @@
   border-bottom: 1px solid #ccc;
 }
 
-.template {
-  color: purple;
-}
-
 /* Navigation menu style for larger screens */
 @media only screen and (min-width: 640px) {
   .icon-menu {
