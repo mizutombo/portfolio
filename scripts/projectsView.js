@@ -79,3 +79,5 @@ projectView.handleDeveloperFilter();
 projectView.handleCategoryFilter();
 projectView.handleMainNav();
 projectView.setTeasers();
+
+projectView.renderIndexPage(); // retrieve data from blogProjects.json

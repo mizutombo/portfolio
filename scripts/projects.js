@@ -1,9 +1,3 @@
-function Project (opts) { // new AJAX code
-  for (keys in opts) {
-    this[keys] = opts[keys];
-  }
-}
-
 var projects = [];
 
 function Project (opts) {
