@@ -27,7 +27,7 @@ article {
 /* Link styles */
 a, a:link, a:active {
   text-decoration: none;
-  color: #777;
+  color: darkblue;
 }
 
 a:hover, a:focus {
