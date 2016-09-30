@@ -88,12 +88,17 @@ projectView.renderIndexPage = function() {
   console.log('render index page');
   console.log('Project.all', Project.all);
   Project.all.forEach(function(project){
-    $('#projects-post').append(project.toHtml());
-    if($('#category-filter option:contains("'+ project.category + '")').length === 0) {
-      $('#category-filter').append(project.toHtml());
-    }
+    // append project contents into '#projects-post'
+    $('#projects-post').append(project.toHtml('#project-template'));
+    // check for duplicate values in developer drop-down selector
     if($('#developer-filter option:contains("'+ project.developer + '")').length === 0) {
-      $('#developer-filter').append(project.toHtml());
+      // append developer names into '#developer-filter'
+      $('#developer-filter').append(project.toHtml('#developer-template'));
+    }
+    // check for duplicate values in category drop-down selector
+    if($('#category-filter option:contains("'+ project.category + '")').length === 0) {
+      // append category names into '#category-filter'
+      $('#category-filter').append(project.toHtml('#category-template'));
     }
   });
 };

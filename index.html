@@ -11,17 +11,17 @@
     <link rel='stylesheet' href='styles/modules.css'>
 
     <!-- Incorporate handlebars.js template for developer drop-down selector -->
-    <script id'developer-filter-template' type="text/x-handlebars-template">
+    <script id='developer-template' type="text/x-handlebars-template">
       <option value="{{developer}}">{{developer}}</option>
     </script>
 
     <!-- Incorporate handlebars.js template for category drop-down selector -->
-    <script id='category-filter-template' type="text/x-handlebars-template">
+    <script id='category-template' type="text/x-handlebars-template">
       <option value="{{category}}">{{category}}</option>
     </script>
 
     <!-- Incorporate handlebars.js template for projects render to webpage -->
-    <script id="project-template" type="text/x-handlebars-template">
+    <script id='project-template' type="text/x-handlebars-template">
       <article>
           <div class ="entry" data-category="{{category}}" data-developer="{{developer}}">
           <h2>{{title}}</h2>
