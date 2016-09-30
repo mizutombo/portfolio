@@ -1,6 +1,6 @@
 
 .site-header {
-  background: #FFEAAA;
+  background: #BDFFC3;
 }
 
 /* Float the main header to the left, to make room for the
@@ -36,7 +36,6 @@
   margin-right: .4em;
   font-size: 1.5em;
   padding: .5em .2em;
-  border-bottom: 1px solid #ccc;
 }
 
 
