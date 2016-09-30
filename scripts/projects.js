@@ -48,6 +48,7 @@ function successHandler(data) {
   Project.loadAll(data);
   // retrieve & render data from blogProjects.json
   projectView.renderIndexPage();
+  projectView.setTeasers();
   console.log('Data:', data);
 }
 function errorHandler(error) {

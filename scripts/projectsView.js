@@ -30,7 +30,7 @@ projectView.handleDeveloperFilter = function() {
       $('article').hide(); // upon filter item change-click, hide all projects in 'article'
       var $same = $(this).val();
       $('article').each(function() {
-        if ($same === $(this).find('div').attr('data-author')) { // retrieves text
+        if ($same === $(this).find('div').attr('data-developer')) { // retrieves text
           $(this).fadeIn(); // fade into 'article' view the click-selected item
         }
       });
@@ -107,7 +107,6 @@ projectView.populateFilters();
 projectView.handleDeveloperFilter();
 projectView.handleCategoryFilter();
 projectView.handleMainNav();
-projectView.setTeasers();
 
 module.projectView = projectView;
 })(window);
