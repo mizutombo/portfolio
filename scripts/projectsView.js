@@ -2,7 +2,7 @@
 
 var projectView = {};
 
-projectView.populateFilters = function() {
+      projectView.populateFilters = function() {
   $('article').each(function() {
     var developer;
     var category;
