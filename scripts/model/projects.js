@@ -44,7 +44,7 @@ Project.fetchAll = function() {
 };
 
 function successHandler(data) {
-  localStorage.setItem('/data/blogProjects.json', JSON.stringify(data));
+  localStorage.setItem('blogProjects', JSON.stringify(data));
   Project.loadAll(data);
   // retrieve & render data from blogProjects.json
   projectView.renderIndexPage();
