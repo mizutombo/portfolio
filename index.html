@@ -20,13 +20,13 @@
       <option value="{{category}}">{{category}}</option>
     </script>
 
-    <!-- Incorporate handlebars.js template for projects render to webpage -->
+    <!-- Incorporate handlebars.js template for projects to render to webpage at within <section> location 'projects-post'-->
     <script id='project-template' type="text/x-handlebars-template">
       <article>
           <div class ="entry" data-category="{{category}}" data-developer="{{developer}}">
-            <h2>{{title}}</h2>
+            <h2><a href={{developerUrl}} target='_blank'>{{title}}</a></h2>
             <h3>{{category}}</h3>
-            <h4>by {{developer}} &#47 published {{publishedOn}}</h3>
+            <h4>by {{developer}} &#47 published {{publishedOn}}</h4>
             <h3 class='project-body'>{{{body}}}</h3>
             <a href='#' class='read-on'>Read on &rarr;</a>
             <a href='#' class='show-less'>&larr; Show less</a>

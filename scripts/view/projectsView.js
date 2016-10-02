@@ -85,7 +85,7 @@ projectView.setTeasers = function() {
   })
   $('.show-less').on('click', function(event) {
     event.preventDefault();
-    $(this).parent().find('.project-body *:nth-of-type(n+2)').fadeOut();
+    $(this).parent().find('.project-body *:nth-of-type(n+2)').hide();
     $(this).parent().find('.show-less').hide();
     $(this).parent().find('.read-on').fadeIn();
   });

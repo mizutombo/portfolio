@@ -23,13 +23,33 @@ article {
   margin: 0 2.5%;
 }
 
+h2 {
+  color: darkblue;
+  font-style: italic;
+}
+
+h4 {
+  color: darkblue;
+  font-style: italic;
+}
+
 
 /* Link styles */
 a, a:link, a:active {
   text-decoration: none;
-  color: darkblue;
+  color: purple;
 }
 
 a:hover, a:focus {
   color: red;
+}
+
+.read-on:hover, .read-on:focus {
+  color: green;
+  font-style: italic;
+}
+
+.show-less:hover, .show-less:focus {
+  color: magenta;
+  font-style: italic;
 }
