@@ -1,51 +1,64 @@
 
 .site-header {
   background: #BDFFC3;
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-color: red;
+  border-style: ridge;
+  border-width: medium;
+  border-radius: 10px;
 }
 
-/* Float the main header to the left, to make room for the
+/* Assuming mobile-first scenario, float the main header to the left, to make room for the
     hamburger menu. */
 .heading-group-h1 {
   float: left;
+  width: 500px;
+  margin: 10px auto 10px auto;
   padding: 0 0 .2em 1em;
+  text-align: center;
 }
 
-.icon-menu {
 /* Set hamburger menu to be bigger, and off to the right. */
+.icon-menu {
   float: right;
-  font-size: 200%;
+  color: darkblue;
+  font-size: 150%;
+  padding-top: 0.3em;
+  padding-right: 0.3em;
 }
-
 .main-nav {
   padding: 0.1em;
 }
 
+/* NOTE: We are by default hiding the main nav list because we are expecting the UI to be mobile, therefore our new icon menu takes its place. */
 .main-nav ul {
-  /* NOTE: We are by default hiding the main nav list because we are expecting the UI to be mobile, therefore our new icon menu takes its place. */
   display: none;
   padding: 0;
   list-style: none;
   clear: both;
+  text-align: center;
 }
-
-.main-nav:hover ul {
+.main-nav:hover ul, .main-nav:focus {
   display: block;
+  color: red;
 }
-
 .main-nav li {
   margin-right: .4em;
   font-size: 1.5em;
-  padding: .5em .2em;
+  padding: .5em .5em;
 }
 
-
 /* Navigation menu style for larger screens */
-@media only screen and (min-width: 640px) {
+
+@media only screen and (min-width: 690px) {
   .icon-menu {
     display: none;
   }
   .main-nav ul {
     display: block;
+    text-align: center;
   }
   .main-nav li {
     display: inline;

@@ -20,15 +20,16 @@
       <option value="{{category}}">{{category}}</option>
     </script>
 
-    <!-- Incorporate handlebars.js template for projects render to webpage -->
+    <!-- Incorporate handlebars.js template for projects to render to webpage at within <section> location 'projects-post'-->
     <script id='project-template' type="text/x-handlebars-template">
       <article>
           <div class ="entry" data-category="{{category}}" data-developer="{{developer}}">
-          <h2>{{title}}</h2>
-          <h3>{{category}}</h3>
-          <h4>by {{developer}} &#47 published {{publishedOn}}</h3>
-          <h3 class='project-body'>{{{body}}}</h3>
-          <a href='#' class='read-on'>Read on &rarr;</a>
+            <h2><a href={{developerUrl}} target='_blank'>{{title}}</a></h2>
+            <h3>{{category}}</h3>
+            <h4>by {{developer}} &#47 published {{publishedOn}}</h4>
+            <h3 class='project-body'>{{{body}}}</h3>
+            <a href='#' class='read-on'>Read on &rarr;</a>
+            <a href='#' class='show-less'>&larr; Show less</a>
           </div>
       </article>
     </script>
@@ -40,11 +41,12 @@
         <h1>Dragonfly Blog</h1>
         <h2>Tom Shultz' SW Development Portfolio</h2>
       </section>
+      </br>
       <nav class='main-nav'>
         <!-- insert 'hamburger' menu icon ... for mobile -->
         <div class='icon-menu'></div>
         <ul>
-          <li class="tab" data-content="project"><a href="#" class="icon-home"> Projects</a></li>
+          <li class="tab" data-content="project"><a href="#" class="icon-rocket"> Projects</a></li>
           <li class="tab" data-content="about"><a href="#" class="icon-power"> About</a></li>
           <li><a href="https://www.linkedin.com/in/tshultz" target="_blank" class="icon-link"> LinkedIn</a></li>
           <li><a href="https://github.com/mizutombo?tab=repositories" target="_blank" class="icon-github"> GitHub</a></li>
@@ -116,12 +118,12 @@
         </ul>
       </h3>
     </section>
-    
+
     </main>
 
       <script src="scripts/jquery-3.1.0.js" type="text/javascript"></script>
       <script src="scripts/handlebars-v4.0.5.js" type="text/javascript"></script>
-      <script src="scripts/projects.js" type="text/javascript"></script>
-      <script src="scripts/projectsView.js" type="text/javascript"></script>
+      <script src="scripts/model/projects.js" type="text/javascript"></script>
+      <script src="scripts/view/projectsView.js" type="text/javascript"></script>
   </body>
 </html>

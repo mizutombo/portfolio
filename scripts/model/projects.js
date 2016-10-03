@@ -12,7 +12,7 @@ Project.all = [];
 Project.prototype.toHtml = function(headScriptTemplate) {
   var source = $(headScriptTemplate).html();
   var template = Handlebars.compile(source);
-  var html = template(this);
+  var html = template(this); // 'this' is context for this handlebars.js template
   return html;
 };
 
@@ -44,7 +44,7 @@ Project.fetchAll = function() {
 };
 
 function successHandler(data) {
-  localStorage.setItem('/data/blogProjects.json', JSON.stringify(data));
+  localStorage.setItem('blogProjects', JSON.stringify(data));
   Project.loadAll(data);
   // retrieve & render data from blogProjects.json
   projectView.renderIndexPage();

@@ -75,12 +75,19 @@ projectView.handleMainNav = function () {
 };
 
 projectView.setTeasers = function() {
-
   $('.project-body *:nth-of-type(n+2)').hide();
-
+  $('.show-less').hide();
   $('.read-on').on('click', function(event) {
     event.preventDefault();
     $(this).parent().find('.project-body *:nth-of-type(n+2)').fadeIn();
+    $(this).parent().find('.read-on').hide();
+    $(this).parent().find('.show-less').fadeIn();
+  })
+  $('.show-less').on('click', function(event) {
+    event.preventDefault();
+    $(this).parent().find('.project-body *:nth-of-type(n+2)').hide();
+    $(this).parent().find('.show-less').hide();
+    $(this).parent().find('.read-on').fadeIn();
   });
 };
 
@@ -88,16 +95,16 @@ projectView.renderIndexPage = function() {
   console.log('render index page');
   console.log('Project.all', Project.all);
   Project.all.forEach(function(project){
-    // append project contents into '#projects-post'
+    // append project contents into '#projects-post' location
     $('#projects-post').append(project.toHtml('#project-template'));
-    // check for duplicate values in developer drop-down selector
+    // first, check for duplicate values in developer drop-down selector
     if($('#developer-filter option:contains("'+ project.developer + '")').length === 0) {
-      // append developer names into '#developer-filter'
+      // then, append developer names into '#developer-filter' location
       $('#developer-filter').append(project.toHtml('#developer-template'));
     }
-    // check for duplicate values in category drop-down selector
+    // first, check for duplicate values in category drop-down selector
     if($('#category-filter option:contains("'+ project.category + '")').length === 0) {
-      // append category names into '#category-filter'
+      // then, append category names into '#category-filter' location
       $('#category-filter').append(project.toHtml('#category-template'));
     }
   });
