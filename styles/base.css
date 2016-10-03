@@ -2,53 +2,51 @@
 img {
   width: 100%;
 }
-
 body {
   line-height: 1.5;
   font-size: 100%;
   color: blue;
+  background-color: #E29AFF;
 }
 
 /* Text styles */
+
 p {
   font-size: 1em;
 }
-
 address {
   display: inline-block;
 }
-
 article {
   border-bottom: 1px solid darkblue;
   margin: 0 2.5%;
 }
-
 h2 {
   color: darkblue;
   font-style: italic;
 }
-
 h4 {
   color: darkblue;
   font-style: italic;
 }
 
-
 /* Link styles */
+
+.icon-menu:hover, .icon-menu:focus {
+  color: red;
+}
 a, a:link, a:active {
   text-decoration: none;
-  color: purple;
+  color: darkblue;
+  font-style: italic;
 }
-
 a:hover, a:focus {
   color: red;
 }
-
 .read-on:hover, .read-on:focus {
-  color: green;
+  color: red;
   font-style: italic;
 }
-
 .show-less:hover, .show-less:focus {
   color: magenta;
   font-style: italic;

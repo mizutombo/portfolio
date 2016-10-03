@@ -12,7 +12,7 @@ Project.all = [];
 Project.prototype.toHtml = function(headScriptTemplate) {
   var source = $(headScriptTemplate).html();
   var template = Handlebars.compile(source);
-  var html = template(this);
+  var html = template(this); // 'this' is context for this handlebars.js template
   return html;
 };
 

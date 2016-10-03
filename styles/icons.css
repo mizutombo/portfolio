@@ -12,6 +12,7 @@
 [class^="icon-"], [class*=" icon-"] {
 	font-family: 'icomoon';
 	speak: none;
+	color: blue;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
@@ -28,6 +29,9 @@
 }
 .icon-home::before {
 	content: "\e908";
+}
+.icon-rocket::before {
+	content: "\e909";
 }
 .icon-power::before {
 	content: "\e90a";
