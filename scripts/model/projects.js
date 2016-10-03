@@ -43,14 +43,15 @@ Project.fetchAll = function() {
     console.log('calling Ajax the man');
 };
 
+// retrieve & render data from blogProjects.json
 function successHandler(data) {
   localStorage.setItem('blogProjects', JSON.stringify(data));
   Project.loadAll(data);
-  // retrieve & render data from blogProjects.json
   projectView.renderIndexPage();
   projectView.setTeasers();
   console.log('Data:', data);
 }
+
 function errorHandler(error) {
   console.log('ERROR', error);
 }
