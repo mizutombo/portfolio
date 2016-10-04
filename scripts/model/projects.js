@@ -27,14 +27,14 @@ Project.loadAll = function(dataToPassIn) {
 Project.fetchAll = function() {
   if (localStorage.blogProjects) {
     // retrieve data from local storage, if available
-    var localStoredData = JSON.parse(localStorage.getItem('blogProjects'));
+    var localStoredData = JSON.parse(localStorage.getItem("blogProjects"));
     console.log('data in local storage', localStoredData);
     Project.loadAll(localStoredData);
     projectView.renderIndexPage();
   } else {
     // if data is not in local storage, call Ajax to pull data from blogProjects.json
     $.ajax({
-      url: '/data/blogProjects.json',
+      url: "/data/blogProjects.json",
       method: 'GET',
       success: successHandler,
       error: errorHandler
@@ -45,7 +45,7 @@ Project.fetchAll = function() {
 
 // retrieve & render data from blogProjects.json
 function successHandler(data) {
-  localStorage.setItem('blogProjects', JSON.stringify(data));
+  localStorage.setItem("blogProjects", JSON.stringify(data));
   Project.loadAll(data);
   projectView.renderIndexPage();
   projectView.setTeasers();

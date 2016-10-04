@@ -61,7 +61,7 @@ projectView.handleCategoryFilter = function() {
   });
 };
 
-projectView.handleMainNav = function () {
+/*projectView.handleMainNav = function () {
   $('.main-nav').on('click', '.tab', function(event) {
     event.preventDefault();
     $('.tab-content').hide();
@@ -72,7 +72,7 @@ projectView.handleMainNav = function () {
   });
   $('.main-nav .tab:first').click();
   //calls jQuery event on navigation
-};
+};*/
 
 projectView.setTeasers = function() {
   $('.project-body *:nth-of-type(n+2)').hide();
@@ -113,7 +113,7 @@ projectView.renderIndexPage = function() {
 projectView.populateFilters();
 projectView.handleDeveloperFilter();
 projectView.handleCategoryFilter();
-projectView.handleMainNav();
+/*projectView.handleMainNav();*/
 
 module.projectView = projectView;
 })(window);
