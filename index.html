@@ -24,7 +24,7 @@
     <script id='project-template' type="text/x-handlebars-template">
       <article>
           <div class ="entry" data-category="{{category}}" data-developer="{{developer}}">
-            <h2><a href={{developerUrl}} target='_blank'>{{title}}</a></h2>
+            <h2><a href="{{developerUrl}}" target='_blank'>{{title}}</a></h2>
             <h3>{{category}}</h3>
             <h4>by {{developer}} &#47 published {{publishedOn}}</h4>
             <h3 class='project-body'>{{{body}}}</h3>
@@ -37,11 +37,11 @@
 
   <body>
     <header class='site-header clearfix'>
+      <!--<div class='icon-menu'></div>-->
       <section class='heading-group-h1'>
         <h1>Dragonfly Blog</h1>
         <h2>Tom Shultz' SW Development Portfolio</h2>
       </section>
-      </br>
       <nav class='main-nav'>
         <!-- insert 'hamburger' menu icon ... for mobile -->
         <div class='icon-menu'></div>
