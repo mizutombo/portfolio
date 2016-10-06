@@ -5,8 +5,8 @@
 
   objGitHub.requestGitHub = function(callback) {
     $.ajax({
-      url: 'https://api.github.com/users/mizutombo/repos',
-      headers: {Authorization: 'token ' + githubToken},
+      url: '/github/users/mizutombo/repos' +
+            '?per_page=10&sort=updated'),
       success: function(data) {
         objGitHub.allGitHub = data;
         callback();
