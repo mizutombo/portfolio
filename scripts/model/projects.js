@@ -24,6 +24,8 @@ Project.loadAll = function(dataToPassIn) {
   });
 };
 
+localStorage.clear();
+
 Project.fetchAll = function() {
   if (localStorage.blogProjects) {
     // retrieve data from local storage, if available
