@@ -6,7 +6,7 @@
 
   githubView.renderGitHub = function() {
     $('#about ul').empty().append(
-      objGitHub.withAttribute('fork')
+      objGitHub.withAttribute('title')
       .map(githubCompiler)
     );
   };
