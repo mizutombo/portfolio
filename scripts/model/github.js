@@ -1,5 +1,5 @@
 (function(module) {
-  var githubObj = {};
+  var objGitHub = {};
 
   objGitHub.allGitHub = [];
 
